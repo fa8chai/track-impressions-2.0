@@ -1,5 +1,4 @@
 import Head from "next/head";
-import db from "../../firebase";
 import Header from "../components/Header";
 import Product from "../components/Product";
 
@@ -22,7 +21,7 @@ export default function Home({ items }) {
 
 export async function getServerSideProps(context){
   const items = await fetch('https://fakestoreapi.com/products').then(res => res.json())
-  
+
   return { props: {
     items: items
   } 
